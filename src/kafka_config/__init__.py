@@ -2,16 +2,21 @@
 import os
 
 
-SECURITY_PROTOCOL="SASL_SSL"
+SECURITY_PROTOCOL="SASL_SSL" #Simple Authentication Security Layer
 SSL_MACHENISM="PLAIN"
+
+# Cloud API details
 API_KEY = os.getenv('API_KEY',None)
-ENDPOINT_SCHEMA_URL  = os.getenv('ENDPOINT_SCHEMA_URL',None)
 API_SECRET_KEY = os.getenv('API_SECRET_KEY',None)
 BOOTSTRAP_SERVER = os.getenv('BOOTSTRAP_SERVER',None)
-SECURITY_PROTOCOL = os.getenv('SECURITY_PROTOCOL',None)
-SSL_MACHENISM = os.getenv('SSL_MACHENISM',None)
+#SECURITY_PROTOCOL = os.getenv('SECURITY_PROTOCOL',None)
+#SSL_MACHENISM = os.getenv('SSL_MACHENISM',None)
+
+# Schema Related
 SCHEMA_REGISTRY_API_KEY = os.getenv('SCHEMA_REGISTRY_API_KEY',None)
 SCHEMA_REGISTRY_API_SECRET = os.getenv('SCHEMA_REGISTRY_API_SECRET',None)
+ENDPOINT_SCHEMA_URL  = os.getenv('ENDPOINT_SCHEMA_URL',None)
+
 
 
 def sasl_conf():
@@ -24,7 +29,7 @@ def sasl_conf():
                 'sasl.username': API_KEY,
                 'sasl.password': API_SECRET_KEY
                 }
-    print(sasl_conf)
+    #print(sasl_conf)
     return sasl_conf
 
 
